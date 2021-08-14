@@ -35,6 +35,13 @@
 #define VDP_TABLE_PATTERN_GENERATOR 3
 #define VDP_TABLE_PATTERN_COLOR 4
 
+typedef struct _pcb
+{
+  unsigned char status;
+  unsigned short addr;
+  unsigned char active_devices;
+} PCB;
+
 typedef struct _dcb
 {
   unsigned char status;
@@ -43,7 +50,6 @@ typedef struct _dcb
   unsigned long block;
   unsigned char unit;
   unsigned long reserved;
-  unsigned short retry_count;
   unsigned char dev;
   unsigned short max_len;
   unsigned char type;
@@ -101,6 +107,20 @@ typedef struct _fileManager
   unsigned long start_of_blocks_left;
   unsigned short blocks_left;
 } FileManager;
+
+typedef struct _gameControllerData
+{
+  unsigned char spinner1;
+  unsigned char spinner2;
+  unsigned char joystick2;
+  unsigned char left2;
+  unsigned char right2;
+  unsigned char keypad2;
+  unsigned char joystick1;
+  unsigned char left1;
+  unsigned char right1;
+  unsigned char keypad1;
+} GameControllerData;
 
 /* Executive calls */
 void eos_init(void);
