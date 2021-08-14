@@ -10,7 +10,7 @@
  * @return Error code, non-zero = error
 */
 
-unsigned char eos_make_directory(unsigned char dev, unsigned char dirsize, unsigned short mediumsize, const char *volumename)
+unsigned char eos_initialize_directory(unsigned char dev, unsigned char dirsize, unsigned short mediumsize, const char *volumename)
 {
   Z80_registers r;
 

@@ -7,6 +7,7 @@
  * @param buf target buffer
  * @return error code if not 0
  */
+
 unsigned char eos_read_block(unsigned char dev, unsigned long blockno, void* buf)
 {
   Z80_registers r;

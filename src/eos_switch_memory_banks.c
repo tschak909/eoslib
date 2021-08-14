@@ -3,11 +3,12 @@
 /** 
  * @brief Switch MIOC memory banks
  * @param bconfig Bank Configuration
+ * @return current bank configuration
  *
  * See BANK_CONFIG_* defines in eos.h for proper values.
  */
 
-void eos_switch_memory_banks(unsigned char bconfig)
+unsigned char eos_switch_memory_banks(unsigned char bconfig)
 {
   Z80_registers r;
 

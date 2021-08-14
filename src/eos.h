@@ -101,5 +101,106 @@ typedef struct _fileManager
   unsigned long start_of_blocks_left;
   unsigned short blocks_left;
 } FileManager;
-  
+
+/* Executive calls */
+void eos_init(void);
+void eos_hard_init(void);
+void eos_hard_reset_net(void);
+void eos_delay_after_hard_reset(void);
+void eos_synchronize_clocks(void);
+void eos_scan_for_devices(void);
+void eos_relocate_pcb(void);
+void eos_soft_init(void *pcb); // TODO make typedef pcb
+void eos_exit_to_smartwriter(void);
+unsigned char eos_switch_memory_banks(unsigned char bconfig);
+
+/* Console Output */
+void eos_console_init(unsigned char cols, unsigned char rows, unsigned char left, unsigned char top, unsigned short addr);
+void eos_console_display_regular(char c);
+void eos_console_display_special(char c, unsigned char col, unsigned char row);
+
+/* Printer Interface */
+unsigned char eos_print_character(char c);
+unsigned char eos_print_buffer(const char *c);
+unsigned char eos_printer_status(void);
+unsigned char eos_start_print_character(char c);
+unsigned char eos_end_print_character(char c);
+
+/* Keyboard Interface */
+unsigned char eos_keyboard_status(void);
+unsigned char eos_read_keyboard(void);
+unsigned char eos_start_read_keyboard(void);
+unsigned char eos_end_read_keyboard(void);
+
+/* File Operations */
+FCB* eos_file_manager_init(void *fcb_buf);
+unsigned char eos_check_directory_for_file(const char *filename, unsigned long *block);
+unsigned char eos_find_file_1(const char *filename, DirectoryEntry *entry, unsigned long *block);
+unsigned char eos_find_file_2(const char *filename, DirectoryEntry *entry, unsigned long *block);
+unsigned char eos_find_file_in_fcb(const char *filename, unsigned char *filemode, FCB *fcb);
+unsigned char eos_check_file_mode(const char *filename, FCB *fcb);
+unsigned char eos_make_file(unsigned char dev, const char *filename, unsigned long size);
+unsigned char eos_update_file_in_directory(unsigned char dev, const char *filename, FCB *fcb);
+unsigned char eos_open_file(unsigned char dev, const char *filename, unsigned char mode, unsigned char *fileno);
+unsigned char eos_close_file(unsigned char fileno);
+unsigned short eos_read_file(unsigned char fileno, unsigned short len, void *buf, unsigned char *errorcode);
+unsigned char eos_write_file(unsigned char fileno, unsigned short len, void *buf);
+unsigned char eos_trim_file(unsigned char dev, const char *filename);
+unsigned char eos_initialize_directory(unsigned char dev, unsigned char dirsize, unsigned short mediumsize, const char *volumename);
+unsigned char eos_reset_file(unsigned char fileno);
+unsigned char eos_get_date(unsigned char *day, unsigned char *month, unsigned char *year);
+unsigned char eos_put_date(unsigned char day, unsigned char month, unsigned char year);
+unsigned char eos_delete_file(unsigned char dev, const char *filename, unsigned long size);
+unsigned char eos_rename_file(unsigned char dev, const char *oldname, const char *newname);
+
+/* Device Operations */
+unsigned short eos_find_pcb(void);
+unsigned short eos_find_dcb(unsigned char dev, DCB *dcb);
+unsigned char eos_request_device_status(unsigned char dev, DCB *dcb);
+unsigned char eos_get_device_status(unsigned char dev);
+unsigned char eos_soft_reset_device(unsigned char dev);
+unsigned char eos_soft_reset_keyboard(void);
+unsigned char eos_soft_reset_printer(void);
+unsigned char eos_read_block(unsigned char dev, unsigned long blockno, void* buf);
+unsigned char eos_read_one_block(unsigned char dev, unsigned long blockno, void* buf);
+unsigned char eos_start_read_one_block(unsigned char dev, unsigned long blockno, void* buf);
+unsigned char eos_end_read_one_block(unsigned char dev);
+unsigned char eos_write_block(unsigned char dev, unsigned long blockno, void* buf);
+unsigned char eos_write_one_block(unsigned char dev, unsigned long blockno, void* buf);
+unsigned char eos_start_write_one_block(unsigned char dev, unsigned long blockno, void* buf);
+unsigned char eos_end_write_one_block(unsigned char dev);
+
+/* Video RAM Management */
+unsigned char eos_set_vdp_ports(void);
+void eos_set_vram_table_address(unsigned char table, unsigned short addr);
+void eos_load_ascii_in_vdp(void);
+void eos_put_ascii_in_vdp(unsigned short num, unsigned short addr, unsigned short ch);
+void eos_write_vram(unsigned short num, unsigned short addr, unsigned short buf);
+void eos_read_vram(unsigned short num, unsigned short addr, unsigned short buf);
+unsigned short eos_put_vram(unsigned char table, unsigned short first, void* buf, unsigned short len);
+unsigned short eos_get_vram(unsigned char table, unsigned short first, void* buf, unsigned short len);
+void eos_write_vdp_register(unsigned char reg, unsigned char val);
+unsigned char eos_read_vdp_register(unsigned char reg, unsigned char val);
+void eos_fill_vram(unsigned short val, unsigned short count, unsigned short addr);
+unsigned short eos_calculate_pattern_position(unsigned char y, unsigned char x);
+unsigned char eos_point_to_pattern_position(unsigned short offset);
+void eos_write_sprite_table(unsigned short num, void* attr, void* priority);
+
+/* Game Controllers */
+void eos_read_game_contoller(unsigned char controllers, void* decode);
+void eos_update_spinner(void);
+
+/* Sound Routines */
+void eos_sound_init(unsigned char entries, void* sound_table);
+void eos_sound_off(void);
+unsigned char eos_start_sound(unsigned char soundno, void* end, void* nextnote, void* table);
+void eos_play_sound(void);
+void eos_end_sound(unsigned short* soundno, unsigned short* nextnote, void* soundtable);
+
+/* Subroutines */
+void eos_decrement_low_nibble(unsigned char *b);
+void eos_decrement_high_nibble(unsigned char *b);
+void eos_move_high_nibble_to_low_nibble(unsigned char *b);
+void eos_add_a_to_hl(char a, unsigned short *b);
+
 #endif /* EOS_H */

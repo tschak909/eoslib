@@ -18,7 +18,7 @@ unsigned char eos_start_read_one_block(unsigned char dev, unsigned long blockno,
 
   r.UWords.HL = buf;
   
-  AsmCall(0xFC69,&r,REGS_ALL,REGS_ALL);
+  AsmCall(0xFCA2,&r,REGS_ALL,REGS_ALL);
   
   return r.Bytes.A;
 }

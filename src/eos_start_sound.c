@@ -16,7 +16,7 @@ unsigned char eos_start_sound(unsigned char soundno, void* end, void* nextnote, 
   r.Bytes.B = soundno;
   r.UWords.HL = end;
   
-  AsmCall(0xFC9C,&r,REGS_ALL,REGS_ALL);
+  AsmCall(0xFC56,&r,REGS_ALL,REGS_ALL);
 
   nextnote = r.UWords.HL;
   table = r.UWords.IX;

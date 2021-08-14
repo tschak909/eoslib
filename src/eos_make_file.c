@@ -18,7 +18,7 @@ unsigned char eos_make_file(unsigned char dev, const char *filename, unsigned lo
   r.UWords.DE = size & 0x0000FFFF;
   r.UWords.HL = filename;
   
-  AsmCall(0xFCCC,&r,REGS_ALL,REGS_ALL);
+  AsmCall(0xFCC9,&r,REGS_ALL,REGS_ALL);
 
   return r.Bytes.A;
 }
