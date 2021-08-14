@@ -17,7 +17,7 @@ unsigned char eos_put_date(unsigned char day, unsigned char month, unsigned char
   r.Bytes.C = month;
   r.Bytes.D = year;
   
-  AsmCall(0xFCD8,NULL,REGS_AF,REGS_AF);
+  AsmCall(0xFCD8,NULL,REGS_ALL,REGS_ALL);
 
   return r.Bytes.A;
 }

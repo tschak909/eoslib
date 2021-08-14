@@ -14,7 +14,7 @@ unsigned char eos_soft_reset_device(unsigned char dev)
 
   r.Bytes.A = dev;
   
-  AsmCall(0xFC90,&r,REGS_AF,REGS_AF);
+  AsmCall(0xFC90,&r,REGS_ALL,REGS_ALL);
   
   return r.Bytes.A;
 }

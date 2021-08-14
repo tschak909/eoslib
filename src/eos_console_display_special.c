@@ -15,5 +15,5 @@ void eos_console_display_special(char c, unsigned char col, unsigned char row)
   r.Bytes.D = col;
   r.Bytes.E = row;
   
-  AsmCall(0xFC39,&r,REGS_AF,REGS_AF);
+  AsmCall(0xFC39,&r,REGS_ALL,REGS_ALL);
 }

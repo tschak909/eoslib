@@ -9,7 +9,7 @@ unsigned char eos_read_keyboard(void)
 {
   Z80_registers r;
 
-  AsmCall(0xFC6C,&r,REGS_AF,REGS_AF);
+  AsmCall(0xFC6C,&r,REGS_ALL,REGS_ALL);
   
   return r.Bytes.A;
 }

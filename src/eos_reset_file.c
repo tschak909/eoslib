@@ -13,7 +13,7 @@ unsigned char eos_reset_file(unsigned char fileno)
 
   r.Bytes.A = fileno;
   
-  AsmCall(0xFCC6,&r,REGS_AF,REGS_AF);
+  AsmCall(0xFCC6,&r,REGS_ALL,REGS_ALL);
 
   return r.Bytes.A;
 }

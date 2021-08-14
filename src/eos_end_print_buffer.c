@@ -10,7 +10,7 @@ unsigned char eos_end_print_buffer(char c)
 {
   Z80_registers r;
 
-  AsmCall(0xFC3F,&r,REGS_AF,REGS_AF);
+  AsmCall(0xFC3F,&r,REGS_ALL,REGS_ALL);
   
   return r.Bytes.A;
 }

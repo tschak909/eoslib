@@ -11,7 +11,7 @@ unsigned char eos_soft_reset_printer(void)
 {
   Z80_registers r;
   
-  AsmCall(0xFC96,&r,REGS_AF,REGS_AF);
+  AsmCall(0xFC96,&r,REGS_ALL,REGS_ALL);
   
   return r.Bytes.A;
 }

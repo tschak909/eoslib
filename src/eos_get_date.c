@@ -13,7 +13,7 @@ unsigned char eos_get_date(unsigned char *day, unsigned char *month, unsigned ch
 {
   Z80_registers r;
   
-  AsmCall(0xFCDB,NULL,REGS_AF,REGS_AF);
+  AsmCall(0xFCDB,NULL,REGS_ALL,REGS_ALL);
 
   if (day != NULL)
     *day = r.Bytes.B;

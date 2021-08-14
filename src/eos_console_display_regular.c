@@ -11,5 +11,5 @@ void eos_console_display_regular(char c)
 
   r.Bytes.A = c;
   
-  AsmCall(0xFC33,&r,REGS_AF,REGS_AF);
+  AsmCall(0xFC33,&r,REGS_ALL,REGS_ALL);
 }

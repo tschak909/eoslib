@@ -12,7 +12,7 @@ unsigned char eos_point_to_pattern_position(unsigned short offset)
   Z80_registers r;
 
   r.UWords.DE = offset;
-  AsmCall(0xFD35,&r,REGS_AF,REGS_AF);
+  AsmCall(0xFD35,&r,REGS_ALL,REGS_ALL);
 
   return r.Bytes.E;
 }

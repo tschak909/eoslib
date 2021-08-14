@@ -12,7 +12,7 @@ unsigned char eos_start_print_character(char c)
 
   r.Bytes.A = c;
   
-  AsmCall(0xFC9F,&r,REGS_AF,REGS_AF);
+  AsmCall(0xFC9F,&r,REGS_ALL,REGS_ALL);
   
   return r.Bytes.A;
 }

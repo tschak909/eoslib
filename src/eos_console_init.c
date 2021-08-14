@@ -19,5 +19,5 @@ void eos_console_init(unsigned char cols, unsigned char rows, unsigned char left
   r.Bytes.E = top;
   r.UWords.HL = addr;
   
-  AsmCall(0xFC36,&r,REGS_AF,REGS_AF);
+  AsmCall(0xFC36,&r,REGS_ALL,REGS_ALL);
 }

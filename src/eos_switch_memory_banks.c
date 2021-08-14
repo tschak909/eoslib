@@ -14,5 +14,5 @@ unsigned char eos_switch_memory_banks(unsigned char bconfig)
 
   r.Bytes.A = bconfig;
   
-  AsmCall(0xfd14,&r,REGS_AF,REGS_AF);
+  AsmCall(0xfd14,&r,REGS_ALL,REGS_ALL);
 }

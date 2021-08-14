@@ -8,7 +8,7 @@ unsigned char eos_read_vdp_register(unsigned char reg, unsigned char val)
 {
   Z80_registers r;
   
-  AsmCall(0xFD23,&r,REGS_AF,REGS_AF);
+  AsmCall(0xFD23,&r,REGS_ALL,REGS_ALL);
 
   return r.Bytes.A;
 }

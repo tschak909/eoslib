@@ -13,5 +13,5 @@ void eos_write_vdp_register(unsigned char reg, unsigned char val)
   r.Bytes.B = reg;
   r.Bytes.C = val;
   
-  AsmCall(0xFD20,&r,REGS_AF,REGS_AF);
+  AsmCall(0xFD20,&r,REGS_ALL,REGS_ALL);
 }
