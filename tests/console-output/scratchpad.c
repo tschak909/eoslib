@@ -17,7 +17,7 @@ void main(void)
   eos_set_vram_table_address(3,0x0000);
   eos_set_vram_table_address(4,0x2000);
   eos_load_ascii_in_vdp();
-  eos_fill_vram(0xF5,768,0x2000);
+  eos_fill_vram(0xF5,32,0x2000);
   eos_console_init(31,23,0,0,0x1800);
   for (;;) { eos_console_display_regular(i++); }
 }
