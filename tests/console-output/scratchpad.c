@@ -8,7 +8,7 @@ void main(void)
 {
   int i=0;
   eos_set_vdp_ports();
-  eos_write_vdp_register(0,1);
+  eos_write_vdp_register(0,0);
   eos_write_vdp_register(1,0xE0);
   eos_write_vdp_register(7,0xF5);
   eos_set_vram_table_address(0,0x1b00);
