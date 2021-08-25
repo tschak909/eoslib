@@ -9,7 +9,7 @@
  * @param table pointer to destination buffer containing decode table
 */
 
-void eos_read_game_contoller(unsigned char controllers, void* decode)
+void eos_read_game_controller(unsigned char controllers, void* decode)
 {
   Z80_registers r;
 

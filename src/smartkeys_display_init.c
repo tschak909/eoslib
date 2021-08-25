@@ -4,12 +4,12 @@
 
 #include <eos.h>
 
-void smartkeys_init(void)
+void smartkeys_display_init(void)
 {
   eos_set_vdp_ports();
 
   // set up for Graphics II mode
-  eos_write_vdp_register(0,1);
+  eos_write_vdp_register(0,2);
   eos_write_vdp_register(1,0xE0);
 
   // Set the border color (text isn't used).
@@ -26,5 +26,5 @@ void smartkeys_init(void)
   eos_load_ascii_in_vdp();
 
   // And clear screen.
-  eos_fill_vram(0xF5,768,0x2000);
+  eos_fill_vram(0x17,768,0x2000);
 }

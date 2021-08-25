@@ -223,4 +223,6 @@ void eos_decrement_high_nibble(unsigned char *b);
 void eos_move_high_nibble_to_low_nibble(unsigned char *b);
 void eos_add_a_to_hl(char a, unsigned short *b);
 
+void smartkeys_display_init(void);
+
 #endif /* EOS_H */
