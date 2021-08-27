@@ -110,16 +110,17 @@ typedef struct _fileManager
 
 typedef struct _gameControllerData
 {
-  unsigned char spinner1;
-  unsigned char spinner2;
   unsigned char joystick2;
-  unsigned char left2;
-  unsigned char right2;
-  unsigned char keypad2;
+  unsigned char joystick2_button_left;
+  unsigned char joystick2_button_right;
+  unsigned char joystick2_keypad;
+  unsigned char joystick2_spinner;
   unsigned char joystick1;
-  unsigned char left1;
-  unsigned char right1;
-  unsigned char keypad1;
+  unsigned char joystick1_button_left;
+  unsigned char joystick1_button_right;
+  unsigned char joystick1_keypad;
+  unsigned char joystick1_spinner;
+  
 } GameControllerData;
 
 /* Executive calls */
@@ -207,7 +208,7 @@ unsigned char eos_point_to_pattern_position(unsigned short offset);
 void eos_write_sprite_table(unsigned short num, void* attr, void* priority);
 
 /* Game Controllers */
-void eos_read_game_contoller(unsigned char controllers, void* decode);
+void eos_read_game_controller(unsigned char controllers, void* decode);
 void eos_update_spinner(void);
 
 /* Sound Routines */
