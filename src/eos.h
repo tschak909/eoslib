@@ -215,7 +215,7 @@ void eos_update_spinner(void);
 void eos_sound_init(unsigned char entries, void* sound_table);
 void eos_sound_off(void);
 unsigned char eos_start_sound(unsigned char soundno, void* end, void* nextnote, void* table);
-void eos_play_sound(void);
+unsigned char eos_play_sound(void);
 void eos_end_sound(unsigned short* soundno, unsigned short* nextnote, void* soundtable);
 
 /* Subroutines */

@@ -4,7 +4,11 @@
  * @brief Play Sound
  */
 
-void eos_play_sound(void)
+unsigned char eos_play_sound(void)
 {
-  AsmCall(0xFD59,NULL,REGS_NONE,REGS_NONE);
+  Z80_registers r;
+  
+  AsmCall(0xFD59,&r,REGS_ALL,REGS_ALL);
+
+  return r.Flags.Z;
 }
