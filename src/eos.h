@@ -190,6 +190,10 @@ unsigned char eos_write_block(unsigned char dev, unsigned long blockno, void* bu
 unsigned char eos_write_one_block(unsigned char dev, unsigned long blockno, void* buf);
 unsigned char eos_start_write_one_block(unsigned char dev, unsigned long blockno, void* buf);
 unsigned char eos_end_write_one_block(unsigned char dev);
+unsigned char eos_start_read_character_device(unsigned char dev, void* buf, unsigned short len);
+unsigned char eos_end_read_character_device(unsigned char dev);
+unsigned char eos_start_write_character_device(unsigned char dev, void* buf, unsigned short len);
+unsigned char eos_end_write_character_device(unsigned char dev);
 
 /* Video RAM Management */
 unsigned char eos_set_vdp_ports(void);
