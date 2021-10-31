@@ -176,7 +176,7 @@ unsigned char eos_rename_file(unsigned char dev, const char *oldname, const char
 
 /* Device Operations */
 unsigned short eos_find_pcb(void);
-unsigned short eos_find_dcb(unsigned char dev, DCB *dcb);
+DCB *eos_find_dcb(unsigned char dev);
 unsigned char eos_request_device_status(unsigned char dev, DCB *dcb);
 unsigned char eos_get_device_status(unsigned char dev);
 unsigned char eos_soft_reset_device(unsigned char dev);
@@ -192,8 +192,10 @@ unsigned char eos_start_write_one_block(unsigned char dev, unsigned long blockno
 unsigned char eos_end_write_one_block(unsigned char dev);
 unsigned char eos_start_read_character_device(unsigned char dev, void* buf, unsigned short len);
 unsigned char eos_end_read_character_device(unsigned char dev);
+unsigned char eos_read_character_device(unsigned char dev, void* buf, unsigned short len);
 unsigned char eos_start_write_character_device(unsigned char dev, void* buf, unsigned short len);
 unsigned char eos_end_write_character_device(unsigned char dev);
+unsigned char eos_write_character_device(unsigned char dev, void* buf, unsigned short len);
 
 /* Video RAM Management */
 unsigned char eos_set_vdp_ports(void);

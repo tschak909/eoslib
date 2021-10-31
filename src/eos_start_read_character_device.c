@@ -18,5 +18,5 @@ unsigned char eos_start_read_character_device(unsigned char dev, void *buf, unsi
   
   AsmCall(0xFCA5,&r,REGS_ALL,REGS_ALL);
   
-  return r.Flags.C;
+  return r.Bytes.A;
 }

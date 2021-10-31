@@ -7,8 +7,7 @@
  * @return DCB address.
  *
  */
-
-unsigned short eos_find_dcb(unsigned char dev, DCB *dcb)
+DCB *eos_find_dcb(unsigned char dev)
 {
   Z80_registers r;
 
