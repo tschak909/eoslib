@@ -49,7 +49,12 @@ typedef struct _dcb
   unsigned short len;
   unsigned long block;
   unsigned char unit;
-  unsigned long reserved;
+  unsigned char reserved0;
+  unsigned char reserved1;
+  unsigned char reserved2;
+  unsigned char reserved3;
+  unsigned char reserved4;
+  unsigned char reserved5;
   unsigned char dev;
   unsigned short max_len;
   unsigned char type;

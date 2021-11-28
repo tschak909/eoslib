@@ -1,4 +1,5 @@
 #include <arch/z80.h>
+#include <string.h>
 #include "eos.h"
 
 /** 
@@ -13,12 +14,14 @@
 unsigned char eos_initialize_directory(unsigned char dev, unsigned char dirsize, unsigned short mediumsize, const char *volumename)
 {
   Z80_registers r;
-
+  volumename[strlen(volumename)-1]=0x03;
+  
   r.Bytes.A = dev;
   r.Bytes.C = dirsize;
   r.UWords.DE = mediumsize;
   r.UWords.HL = volumename;
-  
+
+    
   AsmCall(0xFCBD,&r,REGS_ALL,REGS_ALL);
 
   return r.Bytes.A;

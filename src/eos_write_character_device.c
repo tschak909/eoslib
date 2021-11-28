@@ -1,7 +1,5 @@
 #include "eos.h"
 
-#define UPPER_NIBBLE(x) (x & 0xf0)
-
 /**
  * @brief Start synchronous write of character device of requested # of bytes
  * @param dev device #
@@ -19,7 +17,7 @@ unsigned char eos_write_character_device(unsigned char dev, void* buf, unsigned 
       
       while ((r = eos_end_write_character_device(dev)) < 0x80);
 
-      if (UPPER_NIBBLE(r) == 0x90) // upper nibble being 9 = we timed out. We restart the loop.
+      if (r == 0x9B) // upper nibble being 9 = we timed out. We restart the loop.
 	continue;
       else
 	break; // Otherwise, we're done.
