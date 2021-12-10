@@ -129,6 +129,16 @@ typedef struct _gameControllerData
 } GameControllerData;
 
 /* Executive calls */
+
+// aliases - TOS listing use different names
+#define eos_start             eos_init
+#define eos_dly_aft_hrd_res   eos_hard_reset_net
+#define eos_sync              eos_synchronize_clocks
+#define eos_scan_active       eos_scan_for_devices
+#define eos_reloc_pcb         eos_relocate_pcb
+#define eos_goto_wp           eos_exit_to_smartwriter
+#define eos_switch_mem        eos_switch_memory_banks
+
 void eos_init(void);
 void eos_hard_init(void);
 void eos_hard_reset_net(void);
@@ -141,11 +151,25 @@ void eos_exit_to_smartwriter(void);
 unsigned char eos_switch_memory_banks(unsigned char bconfig);
 
 /* Console Output */
+
+// aliases - TOS listing use different names
+#define eos_cons_init         eos_console_init
+#define eos_cons_disp         eos_console_display_regular
+#define eos_cons_out          eos_console_display_special
+
 void eos_console_init(unsigned char cols, unsigned char rows, unsigned char left, unsigned char top, unsigned short addr);
 void eos_console_display_regular(char c);
 void eos_console_display_special(char c, unsigned char col, unsigned char row);
 
 /* Printer Interface */
+
+// aliases - TOS listing use different names
+#define eos_pr_ch             eos_print_character
+#define eos_pr_buff           eos_print_buffer
+#define eos_pr_stat           eos_printer_status
+#define eos_start_pr_ch       eos_start_print_character
+#define eos_end_pr_ch         eos_end_print_character
+
 unsigned char eos_print_character(char c);
 unsigned char eos_print_buffer(const char *c);
 unsigned char eos_printer_status(void);
@@ -153,12 +177,31 @@ unsigned char eos_start_print_character(char c);
 unsigned char eos_end_print_character(char c);
 
 /* Keyboard Interface */
+
+// aliases - TOS listing use different names
+#define eos_req_kbd_stat      eos_keyboard_status
+#define eos_rd_kbd            eos_read_keyboard
+#define eos_start_rd_kbd      eos_start_read_keyboard
+#define eos_end_rd_kbd        eos_end_read_keyboard
+
 unsigned char eos_keyboard_status(void);
 unsigned char eos_read_keyboard(void);
 unsigned char eos_start_read_keyboard(void);
 unsigned char eos_end_read_keyboard(void);
 
 /* File Operations */
+
+// aliases - TOS listing use different names
+#define eos_fmgr_init         eos_file_manager_init
+#define eos_scan_for_file     eos_check_directory_for_file
+#define eos_query_file        eos_find_file_1
+#define eos_file_query        eos_find_file_2
+#define eos_check_fcb         eos_find_file_in_fcb
+#define eos_mode_check        eos_check_file_mode
+#define eos_set_file          eos_update_file_in_directory
+#define eos_init_tape_dir     eos_initialize_directory
+#define eos_set_date          eos_put_date
+
 FCB* eos_file_manager_init(void *fcb_buf);
 unsigned char eos_check_directory_for_file(const char *filename, unsigned long *block);
 unsigned char eos_find_file_1(const char *filename, DirectoryEntry *entry, unsigned long *block);
@@ -180,6 +223,26 @@ unsigned char eos_delete_file(unsigned char dev, const char *filename, unsigned 
 unsigned char eos_rename_file(unsigned char dev, const char *oldname, const char *newname);
 
 /* Device Operations */
+
+// aliases - TOS listing use different names
+#define eos_get_pcb_addr      eos_find_pcb
+#define eos_get_dcb_addr      eos_find_dcb
+#define eos_request_status    eos_request_device_status
+#define eos_rd_dev_dep_stat   eos_get_device_status
+#define eos_soft_res_dev      eos_soft_reset_device
+#define eos_soft_res_kbd      eos_soft_reset_keyboard
+#define eos_soft_res_pr       eos_soft_reset_printer
+#define eos_rd_1_block        eos_read_one_block
+#define eos_start_rd_1_block  eos_start_read_one_block
+#define eos_end_rd_1_block    eos_end_read_one_block
+#define eos_wr_1_block        eos_write_one_block
+#define eos_start_wr_1_block  eos_start_write_one_block
+#define eos_end_wr_1_block    eos_end_write_one_block
+#define eos_start_rd_ch_dev   eos_start_read_character_device
+#define eos_end_rd_ch_dev     eos_end_read_character_device
+#define eos_start_wr_ch_dev   eos_start_write_character_device
+#define eos_end_wr_ch_dev     eos_end_write_character_device
+
 unsigned short eos_find_pcb(void);
 DCB *eos_find_dcb(unsigned char dev);
 unsigned char eos_request_device_status(unsigned char dev, DCB *dcb);
@@ -203,6 +266,17 @@ unsigned char eos_end_write_character_device(unsigned char dev);
 unsigned char eos_write_character_device(unsigned char dev, void* buf, unsigned short len);
 
 /* Video RAM Management */
+
+// aliases - TOS listing use different names
+#define eos_port_collection   eos_set_vdp_ports
+#define eos_init_table        eos_set_vram_table_address
+#define eos_load_ascii        eos_load_ascii_in_vdp
+#define eos_write_register    eos_write_vdp_register
+#define eos_read_register     eos_read_vdp_register
+#define eos_calc_offset       eos_calculate_pattern_position
+#define eos_px_to_ptrn_pos    eos_point_to_pattern_position
+#define eos_wr_spr_attribute  eos_write_sprite_table
+
 unsigned char eos_set_vdp_ports(void);
 void eos_set_vram_table_address(unsigned char table, unsigned short addr);
 void eos_load_ascii_in_vdp(void);
@@ -219,10 +293,20 @@ unsigned char eos_point_to_pattern_position(unsigned short offset);
 void eos_write_sprite_table(unsigned short num, void* attr, void* priority);
 
 /* Game Controllers */
+
+// aliases - TOS listing use different names
+#define eos_poller            eos_read_game_controller
+
 void eos_read_game_controller(unsigned char controllers, void* decode);
 void eos_update_spinner(void);
 
 /* Sound Routines */
+
+// aliases - TOS listing use different names
+#define eos_turn_off_sound    eos_sound_off
+#define eos_sounds            eos_play_sound
+#define eos_effect_over       eos_end_sound
+
 void eos_sound_init(unsigned char entries, void* sound_table);
 void eos_sound_off(void);
 unsigned char eos_start_sound(unsigned char soundno, void* end, void* nextnote, void* table);
@@ -234,7 +318,5 @@ void eos_decrement_low_nibble(unsigned char *b);
 void eos_decrement_high_nibble(unsigned char *b);
 void eos_move_high_nibble_to_low_nibble(unsigned char *b);
 void eos_add_a_to_hl(char a, unsigned short *b);
-
-void smartkeys_display_init(void);
 
 #endif /* EOS_H */

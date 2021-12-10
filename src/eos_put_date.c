@@ -13,6 +13,14 @@ unsigned char eos_put_date(unsigned char day, unsigned char month, unsigned char
 {
   Z80_registers r;
 
+// 5116  ; _SET_DATE   -- Set the  current   date.
+// S117  ;        
+// 5116  ; ENTRY PARAMETERS:   B  = day   (1..31)
+// 5119  ;                     C  = month (1..12)
+// 5120  ;                     D  = year  (83. .99)
+// 5121  ;
+// 5122  ; EXIT PARAMETERS:   none
+
   r.Bytes.B = day;
   r.Bytes.C = month;
   r.Bytes.D = year;

@@ -14,6 +14,18 @@ unsigned char eos_open_file(unsigned char dev, const char *filename, unsigned ch
 {
   Z80_registers r;
 
+// 4230    ;-----------------------------------------------------------------------------------------
+// 4231    ;
+// 4232    ;  _OPEN_FILE    --  Sets up an FCB for the caller to access a file.
+// 4233    ;
+// 4234    ;  CALLING  PARAMETERS: device number in A;   address of name string
+// 4235    ;                    in HL;  mode in B.
+// 4236    ;
+// 4237    ;  EXIT  PARAMETERS:     if no error   --  Z = 1;  A  =  file number                                                                                      '
+// 4238    ;                        if error      --  Z = 0;  A  =  error code;    B  =  junk
+// 4239    ;
+// 4240    ;-----------------------------------------------------------------------------------------
+                             
   r.Bytes.A = dev;
   r.Bytes.B = mode;
   r.UWords.HL = filename;
