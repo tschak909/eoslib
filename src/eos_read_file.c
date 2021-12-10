@@ -13,6 +13,19 @@ unsigned short eos_read_file(unsigned char fileno, unsigned short len, void *buf
 {
   Z80_registers r;
 
+// 4618 ;------------------------------------------------------------------------------
+// 4619 ;                                                                           
+// 4620 ;  READ FILE   -- read some data from a file into the user’s buffer.
+// 4621 ;
+// 4622 ; ENTRY PARAMETERS:   device number in A; buffer address in HL;
+// 4623 ;                Desired number of bytes in BC.
+// 4624 ;
+// 4625 ; EXIT PARAMETERS:   no  errors  -- Z = 1; A = 0
+// 4626 ;                    {f  errors  -- Z = 0; A = error code;
+// 4627 ;                BC  = number of bytes transferred
+// 4628 ;
+// 4629 ;------------------------------------------------------------------------------
+
   r.Bytes.A = fileno;
   r.UWords.BC = len;
   r.UWords.HL = buf;

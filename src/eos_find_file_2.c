@@ -13,6 +13,25 @@ unsigned char eos_find_file_2(const char *filename, DirectoryEntry *entry, unsig
 {
   Z80_registers r;
 
+// WE ARE FILE_QUERY
+
+// 3516    ;-------------------------------------------------------------------------------------------------
+// 3517    ;
+// 3518    ;  __QUERY_FILE -- Read the file’s directory entry.  (USES STRCMP FOR FILE NAME COMPARISIONS)
+// 3519    ;  __FILE_QUERY -- SAME AS ABOVE BUT SETS UP SCAN_FOR_FILE FOR BASE COMPARES ( USES BASECMP )
+// 3520    ;
+// 3521    ;  CALLING PARAMETERS:        Device number in A
+// 3522    ;                             address of name string in DE
+// 3523    ;                             address of buffer in HL
+// 3524    ;
+// 3525    ;  EXIT PARAMETERS:       if no errors -- Z = 1;  A = 0; BCDE = file’s start block:
+// 3526    ;                                  directory entry in caller’s buffer
+// 3527    ;                         if errors    -- Z = 0;  A = error code;  DE =  junk;
+// 3528    ;                                  caller’s buffer undefined
+// 3529    ;
+// 3530    ;-------------------------------------------------------------------------------------------------
+
+
   r.UWords.DE = filename;
   r.UWords.HL = entry;
   

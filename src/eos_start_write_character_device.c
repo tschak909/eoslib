@@ -11,6 +11,19 @@ unsigned char eos_start_write_character_device(unsigned char dev, void *buf, uns
 {
   Z80_registers r;
   
+// 9207  ;*******************************************************************************************
+// 9208  ;* START_WR_CH_DEV ALLOWS THE CALLER TO SEND A PRINT COMMAND BY SPECIFYING
+// 9209  ;* THE BUFFER OF THE STRING AND THE NUMBER OF BYTES TO PRINT.
+// 9210  ;*        INPUT:     A  ==>    DEVICE ID
+// 9211  ;*                   BC  =>    NUMBER OF BYTES TO WRITE
+// 9212  ;*                   HL  =>    SOURCE OF DATA
+// 9213  ;*        OUTPUT:
+// 9214  ;*                   CONDITION FLAGS
+// 9215  ;*                            Z :        NO ERRORS
+// 9216  ;*                            NZ:        ERROR  OCCURED
+// 9217  ;*                                       A ===>  ERROR   CODE
+// 9218  ;*******************************************************************************************
+
   r.Bytes.A = dev;
   
   r.UWords.BC = len;
