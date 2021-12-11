@@ -28,7 +28,7 @@ void eos_read_game_controller(unsigned char controllers, void* decode)
 // 2278   ;Stack Usage:
 // 2279   ;  will use 4 words   (2 pushes,  2  call)
 // 2280   ;
-// 2281   ;Calis:
+// 2281   ;Calls:
 // 2282   ;  __DECODER
 // 2283   ;  DEBOUNCE
 // 2284   ;  READ_N_DEBOUNCE      (a routine that is nested in _POLLER)

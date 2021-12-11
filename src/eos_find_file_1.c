@@ -9,7 +9,7 @@
  * @return Error code, non-zero = not found
 */
 
-unsigned char eos_find_file_1(const char *filename, DirectoryEntry *entry, unsigned long *block)
+unsigned char eos_find_file_1(const char *filename, DirectoryEntry *entry, unsigned long *block, unsigned char device_number)
 {
   Z80_registers r;
 
@@ -17,8 +17,8 @@ unsigned char eos_find_file_1(const char *filename, DirectoryEntry *entry, unsig
 
 // 3516    ;-------------------------------------------------------------------------------------------------
 // 3517    ;
-// 3518    ;  __QUERY FILE -- Read the file’s directory entry.  (USES STRCMP FOR FILE NAME COMPARISIONS)
-// 3519    ;  __FILE QUERY -- SAME AS ABOVE BUT SETS UP SCAN_FOR_FILE FOR BASE COMPARES ( USES BASECMP )
+// 3518    ;  __QUERY_FILE -- Read the file’s directory entry.  (USES STRCMP FOR FILE NAME COMPARISIONS)
+// 3519    ;  __FILE_QUERY -- SAME AS ABOVE BUT SETS UP SCAN_FOR_FILE FOR BASE COMPARES ( USES BASECMP )
 // 3520    ;
 // 3521    ;  CALLING PARAMETERS:        Device number in A
 // 3522    ;                             address of name string in DE
@@ -31,6 +31,7 @@ unsigned char eos_find_file_1(const char *filename, DirectoryEntry *entry, unsig
 // 3529    ;
 // 3530    ;-------------------------------------------------------------------------------------------------
 
+  r.Bytes.A = device_number;
   r.UWords.DE = filename;
   r.UWords.HL = entry;
   

@@ -20,7 +20,7 @@ unsigned char eos_read_block(unsigned char dev, unsigned long blockno, void* buf
 // 5842 ;*                2)    REQUESTS FOR THE STATUS
 // 5843 ;*                3)    AND SENDS ANOTHER READ TO THE DEVICE
 // 5844 ;*
-// 5845 ;*      INPUT:    SAME AS FOR  _RD_1_ BLOCK
+// 5845 ;*      INPUT:    SAME AS FOR  _RD_1_BLOCK
 // 5846 ;*                A          DEVICE ID
 // 5847 ;*                           LOW NIBBLE   -  DEVICE ADDRESS
 // 5848 ;*                           HI NIBBLE    -  SECONDARY DEVICE ID

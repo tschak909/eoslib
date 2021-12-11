@@ -5,7 +5,7 @@
  * @param c Character to display 
  */
 
-void eos_console_display_regular(char c)
+void eos_console_display_regular(char c, unsigned char col, unsigned char row)
 {
   Z80_registers r;
 
@@ -19,13 +19,15 @@ void eos_console_display_regular(char c)
 // 7427    ;
 // 7428    ;  optionally
 // 7429    ;   E  - Y location to goto (must be in window)
-// 7430    ;   O  - X location to goto (must be in window)
+// 7430    ;   D  - X location to goto (must be in window)
 // 7431    ;
 // 7432    ;
 // 7433    ;   Saves   all   registers
 // 7434    ;
 
   r.Bytes.A = c;
-  
+  r.Bytes.D = col;
+  r.Bytes.E = row;
+
   AsmCall(0xFC33,&r,REGS_ALL,REGS_ALL);
 }

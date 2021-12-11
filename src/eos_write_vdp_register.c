@@ -20,7 +20,7 @@ void eos_write_vdp_register(unsigned char reg, unsigned char val)
 // 1377   ;   Exit:                 if register number = 0 or 1, the  respective byte
 // 1378   ;                         of the VDP_MODE_WORD is updated.
 // 1379   ;
-                            1380   ;   Registers     used:   A,BC,E
+// 1380   ;   Registers     used:   A,BC,E
 
   r.Bytes.B = reg;
   r.Bytes.C = val;

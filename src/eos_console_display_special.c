@@ -21,7 +21,7 @@ void eos_console_display_special(char c, unsigned char col, unsigned char row)
 // 7427    ;
 // 7428    ;  optionally
 // 7429    ;   E  - Y location to goto (must be in window)
-// 7430    ;   O  - X location to goto (must be in window)
+// 7430    ;   D  - X location to goto (must be in window)
 // 7431    ;
 // 7432    ;
 // 7433    ;   Saves   all   registers

@@ -28,7 +28,7 @@ unsigned short eos_put_vram(unsigned char table, unsigned short first, void* buf
 // 1602  ;
 // 1603  ;   Entry:               A  -  table code (see above)
 // 1604  ;                        DE -  starting index into the table
-// 1605  ;                        Hi -  address of user buffer
+// 1605  ;                        HL -  address of user buffer
 // 1606  ;                        IY -  block size (or byte count)
 // 1607  ;
 // 1608  ;   Exit:                None.

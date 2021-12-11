@@ -158,7 +158,7 @@ unsigned char eos_switch_memory_banks(unsigned char bconfig);
 #define eos_cons_out          eos_console_display_special
 
 void eos_console_init(unsigned char cols, unsigned char rows, unsigned char left, unsigned char top, unsigned short addr);
-void eos_console_display_regular(char c);
+void eos_console_display_regular(char c, unsigned char col, unsigned char row);
 void eos_console_display_special(char c, unsigned char col, unsigned char row);
 
 /* Printer Interface */
@@ -202,10 +202,10 @@ unsigned char eos_end_read_keyboard(void);
 #define eos_init_tape_dir     eos_initialize_directory
 #define eos_set_date          eos_put_date
 
-FCB* eos_file_manager_init(void *fcb_buf);
-unsigned char eos_check_directory_for_file(const char *filename, unsigned long *block);
-unsigned char eos_find_file_1(const char *filename, DirectoryEntry *entry, unsigned long *block);
-unsigned char eos_find_file_2(const char *filename, DirectoryEntry *entry, unsigned long *block);
+void eos_file_manager_init(void *fcb_buf, void *fcs_buf);
+unsigned char eos_check_directory_for_file(const char *filename, unsigned long *block, unsigned char device_number);
+unsigned char eos_find_file_1(const char *filename, DirectoryEntry *entry, unsigned long *block, unsigned char device_number);
+unsigned char eos_find_file_2(const char *filename, DirectoryEntry *entry, unsigned long *block, unsigned char device_number);
 unsigned char eos_find_file_in_fcb(const char *filename, unsigned char *filemode, FCB *fcb);
 unsigned char eos_check_file_mode(const char *filename, FCB *fcb);
 unsigned char eos_make_file(unsigned char dev, const char *filename, unsigned long size);
