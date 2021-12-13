@@ -15,7 +15,7 @@ unsigned char eos_request_device_status(unsigned char dev, DCB *dcb)
 // 6628  ;********************************************************************************************
 // 6629  ;* THIS ROUTINE WILL INITIATE A STATUS REQUEST COMMAND, AND WILL RETURN
 // 6630  ;* THE RESULT OF THE COMMAND.
-// 6631  ;*      INPUT:    A==>     DEVICE  ID
+// 6631  ;*      INPUT:    A ==> DEVICE  ID
 // 6632  ;*      OUTPUT:   CONDITION BITS
 // 6633  ;*                Z:       NO ERRORS
 // 6634  ;*                         IY CONTAINS START ADDRESS OF DCB
