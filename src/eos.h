@@ -158,7 +158,7 @@ unsigned char eos_switch_memory_banks(unsigned char bconfig);
 #define eos_cons_out          eos_console_display_special
 
 void eos_console_init(unsigned char cols, unsigned char rows, unsigned char left, unsigned char top, unsigned short addr);
-void eos_console_display_regular(char c);
+void eos_console_display_regular(char c, unsigned char col, unsigned char row);
 void eos_console_display_special(char c, unsigned char col, unsigned char row);
 
 /* Printer Interface */
@@ -202,10 +202,10 @@ unsigned char eos_end_read_keyboard(void);
 #define eos_init_tape_dir     eos_initialize_directory
 #define eos_set_date          eos_put_date
 
-FCB* eos_file_manager_init(void *fcb_buf);
-unsigned char eos_check_directory_for_file(const char *filename, unsigned long *block);
-unsigned char eos_find_file_1(const char *filename, DirectoryEntry *entry, unsigned long *block);
-unsigned char eos_find_file_2(const char *filename, DirectoryEntry *entry, unsigned long *block);
+void eos_file_manager_init(void *fcb_buf, void *fcs_buf);
+unsigned char eos_check_directory_for_file(const char *filename, unsigned long *block, unsigned char device_number);
+unsigned char eos_find_file_1(const char *filename, DirectoryEntry *entry, unsigned long *block, unsigned char device_number);
+unsigned char eos_find_file_2(const char *filename, DirectoryEntry *entry, unsigned long *block, unsigned char device_number);
 unsigned char eos_find_file_in_fcb(const char *filename, unsigned char *filemode, FCB *fcb);
 unsigned char eos_check_file_mode(const char *filename, FCB *fcb);
 unsigned char eos_make_file(unsigned char dev, const char *filename, unsigned long size);
@@ -318,5 +318,35 @@ void eos_decrement_low_nibble(unsigned char *b);
 void eos_decrement_high_nibble(unsigned char *b);
 void eos_move_high_nibble_to_low_nibble(unsigned char *b);
 void eos_add_a_to_hl(char a, unsigned short *b);
+
+// The EOS returns a variety of error codes. Several of these are errors returned by the 
+// Device Control Blocks. In order to interpret these from the table below, the high bit 
+// must be stripped with an AND 7F.
+#define EOS_ERR_NONE           0
+#define EOS_ERR_DCB_NOT_FOUND  1 
+#define EOS_ERR_DCB_BUSY       2
+#define EOS_ERR_DCB_IDLE       3
+#define EOS_ERR_NO_DATE        4
+#define EOS_ERR_NO_FILE        5
+#define EOS_ERR_FILE_EXISTS    6 // or printer busy
+#define EOS_ERR_NO_FCB         7
+#define EOS_ERR_MATCH          8 // or file incompatible
+#define EOS_ERR_BAD_FNUM       9 // bad file number (greater than 2).
+#define EOS_ERR_EOF_ERR       10
+#define EOS_ERR_TOO_BIG       11
+#define EOS_ERR_FULL_DIR      12 // or no key pressed on keyboard read
+#define EOS_ERR_FULL_TAPE     13 // Storage media full
+#define EOS_ERR_FILE_NM       14 // File number error
+#define EOS_ERR_RENAME        15
+#define EOS_ERR_DELETE        16
+#define EOS_ERR_RANGE         17 // or bad mode
+#define EOS_ERR_CANT_SYNC1    18 // Synchronize error on clock
+#define EOS_ERR_CANT_SYNC2    19 // Synchronize error byte 2
+#define EOS_ERR_PRT           20 
+#define EOS_ERR_RQ_TP_STAT    21 // Media status error
+#define EOS_ERR_DEVICE_DEPD   22 // Device error, usually with tapes or disks
+#define EOS_ERR_PROG_NON_EXIST 23 //Program doesn't exist
+#define EOS_ERR_NO_DIR        24 // Storage medium fails directory validity check
+#define EOS_ERR_TIMEOUT       0x9B // ??? 27 Device time out
 
 #endif /* EOS_H */

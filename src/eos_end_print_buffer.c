@@ -9,6 +9,7 @@
 unsigned char eos_end_print_buffer(char c)
 {
   Z80_registers r;
+  
 // 7208  ;*************************************************************************************************************
 // 7209  ;*
 // 7210  ;*        __END_PR_BUFF CHECKS THE DCB COMM/STATUS BYTE AND RETURNS THE  RESULT

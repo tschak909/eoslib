@@ -9,7 +9,7 @@
  * @return Error code, non-zero = not found
 */
 
-unsigned char eos_find_file_2(const char *filename, DirectoryEntry *entry, unsigned long *block)
+unsigned char eos_find_file_2(const char *filename, DirectoryEntry *entry, unsigned long *block, unsigned char device_number)
 {
   Z80_registers r;
 
@@ -31,7 +31,7 @@ unsigned char eos_find_file_2(const char *filename, DirectoryEntry *entry, unsig
 // 3529    ;
 // 3530    ;-------------------------------------------------------------------------------------------------
 
-
+  r.Bytes.A = device_number;
   r.UWords.DE = filename;
   r.UWords.HL = entry;
   

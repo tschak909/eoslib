@@ -7,7 +7,7 @@
  * @return pointer to three FCB entries
  */
 
-FCB* eos_file_manager_init(void *fcb_buf)
+void eos_file_manager_init(void *fcb_buf, void *fcs_buf)
 {
   Z80_registers r;
 
@@ -23,8 +23,9 @@ FCB* eos_file_manager_init(void *fcb_buf)
 // 5207   ;*************************************************************************************************************
 
   r.UWords.DE = fcb_buf;
+  r.UWords.HL = fcs_buf;
   
   AsmCall(0xFCBA,&r,REGS_ALL,REGS_ALL);
 
-  return (FCB *)r.UWords.HL;
+  return;
 }

@@ -7,13 +7,13 @@
  * @return Error code, non-zero = not found
 */
 
-unsigned char eos_check_directory_for_file(const char *filename, unsigned long *block)
+unsigned char eos_check_directory_for_file(const char *filename, unsigned long *block, unsigned char device_number)
 {
   Z80_registers r;
 
 // 5231 ;*********************************************************************************
 // 5232 ;
-// 5233 ; SCAN_FOR_FILE  -- Look  inthe directory for a file name.
+// 5233 ; SCAN_FOR_FILE  -- Look  in the directory for a file name.
 // 5234 ;                Reads each block of the directory into a buffer
 // 5235 ;                (in the system’s FCB) and scans through for a
 // 5236 ;                match with the caller’s string.
@@ -32,6 +32,7 @@ unsigned char eos_check_directory_for_file(const char *filename, unsigned long *
 // 5249 ;*********************************************************************************
 
   r.UWords.HL = filename;
+  r.Bytes.A = device_number;
   
   AsmCall(0xFCFC,&r,REGS_ALL,REGS_ALL);
 
