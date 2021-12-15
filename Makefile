@@ -24,7 +24,11 @@ $(BUILD_DIR)/%.c.o: %.c
 	$(MKDIR_P) $(dir $@)
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
-.PHONY: clean
+.PHONY: install clean
+
+install: src/eos.h eos.lib
+	install src/eos.h /usr/local/share/z88dk/include/
+	install eos.lib /usr/local/share/z88dk/lib/
 
 clean:
 	$(RM) -r eos.lib $(BUILD_DIR)
