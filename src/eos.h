@@ -349,4 +349,40 @@ void eos_add_a_to_hl(char a, unsigned short *b);
 #define EOS_ERR_NO_DIR        24 // Storage medium fails directory validity check
 #define EOS_ERR_TIMEOUT       0x9B // ??? 27 Device time out
 
+// The following are result codes returned from the AdamNet, in response to
+// eos_read/write/block/character and status calls.
+// They come from the 6801 Master Listing
+
+#define ADAMNET_OK                 0x80 // All good
+#define ADAMNET_READY_TIMEOUT      0x81 // 0xDx (READY) packet was not responded in time.
+#define ADAMNET_RTS_COMM_ERR       0x82 // ???
+#define ADAMNET_SEND_TIMEOUT       0x83 // 0x6x (SEND) packet was not responded in time.
+#define ADAMNET_SEND_COMM_ERR      0x84 // ???
+#define ADAMNET_SEND_DATA_BREAK    0x85 // Peripheral sent a BREAK during a send response. (0xBx)
+#define ADAMNET_READY_NACK         0x86 // 0xDx (READY) packet was acknowledged with a 0xCx (NACK)
+#define ADAMNET_READY_BREAK        0x87 // Peripheral sent a BREAK during a ready. (0xDx)
+#define ADAMNET_SEND_DATA_NACK     0x88 // 0x6x (SEND) packet was acknowledged with a 0xCx (NACK)
+#define ADAMNET_RECIEVE_TIMEOUT    0x89 // 0x4x (RECIEVE) packet was not responded in time.
+#define ADAMNET_RECIEVE_BREAK      0x8A // Peripheral sent a BREAK while ADAM was requesting a receive (0x4x)
+#define ADAMNET_RECEIVE_BREAK_DATA 0x8B // Peripheral sent a BREAK while ADAM was receiving data
+#define ADAMNET_RECEIVE_NACK       0x8C // Peripheral responded with NACK (0xCx) during a Receive  (0x4x)
+#define ADAMNET_CLR_TIMEOUT        0x8D // Peripheral did not respond with (0xBx) in time
+#define ADAMNET_CLR_ERR            0x8E // Error during CLR (0x3x) phase (not sure?)
+#define ADAMNET_CLR_BREAK          0x8F // Peripheral sent BREAK after a CLR (0x3x)
+#define ADAMNET_DATA_IN_ERROR      0x90 // Am guessing this is a general framing error?
+#define ADAMNET_DATA_IN_TIMEOUT    0x91 // Timeout while receiving part of a data byte.
+#define ADAMNET_BAD_ASIG           0x92 // ???
+#define ADAMNET_STAT_TIMEOUT       0x93 // 0x01 (STATUS) paccket was not responded in time.
+#define ADAMNET_STAT_BREAK         0x94 // Peripheral sent a BREAK while Adam was waiting for STATUS (0x1x)
+#define ADAMNET_STATUS_BREAK       0x95 // What? There's another one?
+#define ADAMNET_TCU_ERR1           0x96 // Master 6801 couldn't transmit, this is bad.
+#define ADAMNET_TCU_ERR2           0x97 // Master 6801 couldn't transmit, this is bad.
+#define ADAMNET_TRANS_TO1          0x98 // Master 6801 Timed out while transmitting, this is bad.
+#define ADAMNET_TRANS_TO2          0x99 // Master 6801 timed out while transmitting, this is bad.
+#define ADAMNET_HAVE_ORFE          0x9A // ???
+#define ADAMNET_TIMEOUT            0x9B // General Timeout outside of a particular packet state.
+#define ADAMNET_BAD_RDRF           0x9C // I suspect this is when the receive packet size doesn't match
+#define ADAMNET_BAD_TDRE           0x9D // ???
+#define ADAMNET_BAD_ORFE           0x9E // ???
+
 #endif /* EOS_H */
