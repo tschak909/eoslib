@@ -362,8 +362,8 @@ void eos_add_a_to_hl(char a, unsigned short *b);
 #define ADAMNET_READY_NACK         0x86 // 0xDx (READY) packet was acknowledged with a 0xCx (NACK)
 #define ADAMNET_READY_BREAK        0x87 // Peripheral sent a BREAK during a ready. (0xDx)
 #define ADAMNET_SEND_DATA_NACK     0x88 // 0x6x (SEND) packet was acknowledged with a 0xCx (NACK)
-#define ADAMNET_RECIEVE_TIMEOUT    0x89 // 0x4x (RECIEVE) packet was not responded in time.
-#define ADAMNET_RECIEVE_BREAK      0x8A // Peripheral sent a BREAK while ADAM was requesting a receive (0x4x)
+#define ADAMNET_RECEIVE_TIMEOUT    0x89 // 0x4x (RECEIVE) packet was not responded in time.
+#define ADAMNET_RECEIVE_BREAK      0x8A // Peripheral sent a BREAK while ADAM was requesting a receive (0x4x)
 #define ADAMNET_RECEIVE_BREAK_DATA 0x8B // Peripheral sent a BREAK while ADAM was receiving data
 #define ADAMNET_RECEIVE_NACK       0x8C // Peripheral responded with NACK (0xCx) during a Receive  (0x4x)
 #define ADAMNET_CLR_TIMEOUT        0x8D // Peripheral did not respond with (0xBx) in time
