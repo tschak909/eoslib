@@ -2,7 +2,7 @@
 
 /** 
  * @brief add A to (HL)
- * @param value to add (-127,+127)
+ * @param value to add (-128,+127)
  * @param pointer to 16-bit number
  */
 
