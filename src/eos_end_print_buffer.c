@@ -20,7 +20,7 @@ unsigned char eos_end_print_buffer(char c)
 // 7215  ;*         OUTPUT:   CONDITION FLAGS
 // 7216  ;*                   C:          COMMAND COMPLETED
 // 7217  ;*                  NC:          COMMAND NOT COMPLETED
-// 7218  ;*                   2:          NO ERRORS OCCURED
+// 7218  ;*                   2:          NO ERRORS OCCURRED
 // 7219  ;*                  NZ:          ERRORS
 // 7220  ;*                               A = ERROR   CODE
 // 7221  ;*

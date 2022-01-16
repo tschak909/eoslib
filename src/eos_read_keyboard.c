@@ -16,7 +16,7 @@ unsigned char eos_read_keyboard(void)
 // 6776   ;*      OUTPUT:   CONDITION  FLAGS
 // 6777   ;*                Z:       NO  ERRORS
 // 6778   ;*                           A ===> CONTAINS THE KEY READ
-// 6779   ;*                NZ:      ERROR OCCURED
+// 6779   ;*                NZ:      ERROR OCCURRED
 // 6780   ;*                           A ===> ERROR CODE
 // 6781   ;*
 // 6782   ;*

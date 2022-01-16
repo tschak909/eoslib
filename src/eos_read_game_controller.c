@@ -19,7 +19,7 @@ void eos_read_game_controller(unsigned char controllers, void* decode)
 // 2269   ;   Does some debouncing if called twice in succession
 // 2270   ;
 // 2271   ;   NOTE   - Does not return at bottom of code, return is in middie
-// 2272   ;            Interupts will be off for a while when call to DECODE is performed.
+// 2272   ;            Interrupts will be off for a while when call to DECODE is performed.
 // 2273   ;
 // 2274   ;   Callers   - This has different input parameters than OS-7 and
 // 2275   ;               the controller map is ordered differently.

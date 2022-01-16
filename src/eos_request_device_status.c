@@ -19,7 +19,7 @@ unsigned char eos_request_device_status(unsigned char dev, DCB *dcb)
 // 6632  ;*      OUTPUT:   CONDITION BITS
 // 6633  ;*                Z:       NO ERRORS
 // 6634  ;*                         IY CONTAINS START ADDRESS OF DCB
-// 6635  ;*                NZ:      ERROR OCCURED
+// 6635  ;*                NZ:      ERROR OCCURRED
 // 6636  ;*                         A ==> ERROR CODE
 // 6637  ;*                         IY IS DESTROYED (MAY BE ADDRESS OF DCB
 // 6638  ;*                         UNDER CERTAIN ERROR CONDITIONS)

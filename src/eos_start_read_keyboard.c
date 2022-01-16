@@ -10,11 +10,11 @@ unsigned char eos_start_read_keyboard(void)
   Z80_registers r;
 
 // 6835 ;***********************************************************************************
-// 6836 ;* THIS ROUTINE  WILL START A READ DATA COMMNAD ON THE KEYBOARD
+// 6836 ;* THIS ROUTINE  WILL START A READ DATA COMMAND ON THE KEYBOARD
 // 6837 ;*      INPUT:   NOTHING
 // 6838 ;*      OUTPUT:  CONDITION FLAGS
 // 6839 ;*               Z :     NO ERROR
-// 6840 ;*               NZ:     ERROR OCCURED
+// 6840 ;*               NZ:     ERROR OCCURRED
 // 6841 ;*                        A ===> ERROR CODE
 // 6842 ;***********************************************************************************
 

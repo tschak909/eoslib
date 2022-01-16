@@ -14,7 +14,7 @@ void eos_put_ascii_in_vdp(unsigned short num, unsigned short addr, unsigned shor
 
 // 1860 ;  __PUT_ASCII
 // 1861 ;
-// 1862 ;       Copys a specified number of ASCII character generators into VRAM.
+// 1862 ;       Copies a specified number of ASCII character generators into VRAM.
 // 1863 ;       Swaps to ROM that contains the generators then swaps back, keeps
 // 1864 ;       track of callers stack and uses a local stack that is known to
 // 1865 ;       be in RAM when the ROM is swapped in.

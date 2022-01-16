@@ -15,7 +15,7 @@ unsigned char eos_print_character(char c)
 // 6924 ; +      INPUT:  A ===> CHARACTER  TO  BE PRINTED
 // 6925 ; *      OUTPUT: CONDITION FLAGS
 // 6926 ; *              Z:      NO ERROR
-// 6927 ; *              NZ:     ERROR OCCURED
+// 6927 ; *              NZ:     ERROR OCCURRED
 // 6928 ; *                      A ===> ERROR  CODE
 // 6929 ; *
 // 6930 ; *********************************************************************

@@ -33,7 +33,7 @@ unsigned char eos_read_block(unsigned char dev, unsigned long blockno, void* buf
 // 5855 ;*
 // 5856 ;*      OUTPUT:   CONDITION FLAGS
 // 5857 ;*                           Z:   NO ERRORS
-// 5858 ;«                          NZ:   ERROR OCCURED
+// 5858 ;«                          NZ:   ERROR OCCURRED
 // 5859 ;*                                     A - ERROR  CODE
 // 5860 ;*
 // 5861 ;*      ALL REGISTERS ARE PRESERVED EXCEPT FOR AF
