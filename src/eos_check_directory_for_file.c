@@ -20,7 +20,7 @@ unsigned char eos_check_directory_for_file(const char *filename, unsigned long *
 // 5237 ;
 // 5238 ; ENTRY PARAMETERS:  address of name string in HL;  device # in A
 // 5239 ;         ASSUMES  FILENAME_CMP SET UP FOR FILE COMPARES
-// 5240 ;         O  - USE STRCMP ,  NOT O  - USE BASECMP   FOR FILE NAME COMPARISIONS
+// 5240 ;         O  - USE STRCMP ,  NOT O  - USE BASECMP   FOR FILE NAME COMPARISONS
 // 5241 ;
 // 5242 ; EXIT PARAMETERS:  if match found  --Z =  1; A = 0; file’s start
 // 5243 ;                block in BCDE; directory block left in buffer,

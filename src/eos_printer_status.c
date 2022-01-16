@@ -15,7 +15,7 @@ unsigned char eos_printer_status(void)
 // 7262 ;    OUTPUT:
 // 7263 ;           CONDITION FLAGS
 // 7264 ;                    Z  : NO ERROR
-// 7265 ;                   NZ  : ERROR OCCURED
+// 7265 ;                   NZ  : ERROR OCCURRED
 // 7266 ;                         A ===> ERROR CODE
 // 7267 * 
 // 7268 ;******************************************************************

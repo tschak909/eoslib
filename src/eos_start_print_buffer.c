@@ -15,7 +15,7 @@ unsigned char eos_start_print_buffer(const char *c)
 // 7138   ;*        INPUT:       HL  ==>     ADDRESS OF ETX-TERMINATED STRING
 // 7139   ;©        OUTPUT:      CONDITION FLAGS
 // 7140   ;*                      Z:         NO ERROR
-// 7141   ;*                     NZ:         ERROR OCCURED
+// 7141   ;*                     NZ:         ERROR OCCURRED
 // 7142   ;*                                 A  ===> ERROR CODE
 // 7143   ;*
 // 7144   ;************************************************************************************************

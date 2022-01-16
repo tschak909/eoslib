@@ -19,7 +19,7 @@ DCB *eos_find_dcb(unsigned char dev)
 // 6569   ;*                 CONDITION FLAG:
 // 6570   ;*                           Z  : NO ERRORS
 // 6571   ;*                                IY  ==>  POINTS TO THE START OF THE DEVICE DCB
-// 6572   ;*                          NZ  : ERROR OCCURED
+// 6572   ;*                          NZ  : ERROR OCCURRED
 // 6573   ;*                                IY  ==>  IS DESTROYED
 // 6574   ;*
 // 6575   ;****************************************************************************************

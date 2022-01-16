@@ -24,7 +24,7 @@ unsigned short eos_get_vram(unsigned char table, unsigned short first, void* buf
 // 1639  ;                       1 - SPRITE GENERATOR TABLE   (SGT)
 // 1640  ;                       2 - PATTERN NAME TABLE       (PNT)
 // 1641  ;                       3 - PATTERN GENERATOR TABLE  (PGT)
-// 1642  ;                       4 - PATTERN COLOR TABEL      (PCT)
+// 1642  ;                       4 - PATTERN COLOR TABLE      (PCT)
 // 1643  ;
 // 1644  ;   Entry:            A - table code (see above)
 // 1645  ;                     DE - starting index into the table

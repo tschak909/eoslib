@@ -20,7 +20,7 @@ unsigned char eos_start_write_character_device(unsigned char dev, void *buf, uns
 // 9213  ;*        OUTPUT:
 // 9214  ;*                   CONDITION FLAGS
 // 9215  ;*                            Z :        NO ERRORS
-// 9216  ;*                            NZ:        ERROR  OCCURED
+// 9216  ;*                            NZ:        ERROR  OCCURRED
 // 9217  ;*                                       A ===>  ERROR   CODE
 // 9218  ;*******************************************************************************************
 

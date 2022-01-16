@@ -16,8 +16,8 @@ unsigned char eos_end_read_keyboard(void)
 // 6869   ;*           OUTPUT:      CONDITION FLAG
 // 6870   ;*                        C:           COMMAND HAS FINISHED
 // 6871   ;*                        NC:          COMMAND HAS NOT BEEN FINISHED
-// 6872   ;*                        a:           NO ERROR OCCURED
-// 6873   ;*                        NZ:          ERROR OCCURED
+// 6872   ;*                        a:           NO ERROR OCCURRED
+// 6873   ;*                        NZ:          ERROR OCCURRED
 // 6874   ;*                                     A ===> ERROR CODE
 // 6875   ;******************************************************************************************
                                            

@@ -20,7 +20,7 @@ unsigned char eos_start_read_character_device(unsigned char dev, void *buf, unsi
 // 9244 ;*               BC ===>  NUMBER OF BYTES TO READ
 // 9245 ;*      OUTPUT:   CONDITION FLAGS
 // 9246 ;*               Z:       THE READ DATA FROM KEYBOARD COMMAND HAS BEEN SENT
-// 9247 ;*               NZ:      ERROR OCCURED
+// 9247 ;*               NZ:      ERROR OCCURRED
 // 9248 ;*                        A ===>  ERROR CODE
 // 9249 ;***************************************************************************************
 

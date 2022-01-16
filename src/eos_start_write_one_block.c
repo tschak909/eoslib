@@ -33,7 +33,7 @@ unsigned char eos_start_write_one_block(unsigned char dev, unsigned long blockno
 // 9020   ;*      OUTPUT:
 // 9021   ;*               CONDITION BITS:
 // 9022   ;*                       Z:  NO ERRORS
-// 9023   ;*                      NZ:  ERRORS OCCURED
+// 9023   ;*                      NZ:  ERRORS OCCURRED
 // 9024   ;*                              A - ERROR CODE
 // 9025   ;*
 // 9026   ;*      ALL REGISTERS ARE PRESERVED

@@ -14,7 +14,7 @@ unsigned char eos_keyboard_status(void)
 // 6818  ;*      INPUT:  NOTHING
 // 6819  ;*      OUTPUT: CONDITION FLAG
 // 6820  ;*              Z:       NO ERRORS
-// 6821  ;*              NZ:      ERROR OCCURED
+// 6821  ;*              NZ:      ERROR OCCURRED
 // 6822  ;*                       A ===> ERROR CODE
 // 6823  ;*
 // 6824  ;**********************************************************************************

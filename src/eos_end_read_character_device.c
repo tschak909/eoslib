@@ -18,8 +18,8 @@ unsigned char eos_end_read_character_device(unsigned char dev)
 // 9284   ;*      OUTPUT: CONDITION FLAGS
 // 9285   ;*              C :     COMMAND HAS FINISHED
 // 9286   ;*             NC :     COMMAND HAS NOT BEEN PROCESSED
-// 9287   ;«              Z :     NO ERROR OCCURED
-// 9288   ;*             NZ :      ERROR OCCURED
+// 9287   ;«              Z :     NO ERROR OCCURRED
+// 9288   ;*             NZ :      ERROR OCCURRED
 // 9289   ;*                      A ===> ERROR CODE
 // 9290   ;*
 // 9291   ;*****************************************************************************

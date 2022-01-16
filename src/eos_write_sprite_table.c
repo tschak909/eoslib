@@ -20,7 +20,7 @@ void eos_write_sprite_table(unsigned short num, void* attr, void* priority)
 // 2009 ;
 // 2010 ;  Entry:             DE - address of Local Sprite Table
 // 2011 ;                     HL - address of Priority table
-// 2012 ;                      A - number of sprites to be transfered (length of Local Sprite
+// 2012 ;                      A - number of sprites to be transferred (length of Local Sprite
 // 2013 ;                            table divided by 4
 // 2014 ;  Exit:              None.
 // 2015 ;

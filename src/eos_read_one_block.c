@@ -31,7 +31,7 @@ unsigned char eos_read_one_block(unsigned char dev, unsigned long blockno, void*
 // 8792 ;*      OUTPUT:
 // 8793 ;*               CONDITION BITS:
 // 8794 ;*                       Z: NO ERRORS  
-// 8795 ;*                      NZ: ERRORS  OCCURED
+// 8795 ;*                      NZ: ERRORS  OCCURRED
 // 8796 ;*                                A - ERROR CODE
 // 8797 ;*
 // 8798 ;*      ALL REGISTERS ARE PRESERVED

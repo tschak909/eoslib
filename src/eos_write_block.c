@@ -32,7 +32,7 @@ unsigned char eos_write_block(unsigned char dev, unsigned long blockno, void* bu
 // 5991 ;*
 // 5992 ;*        OUTPUT:   CONDITION FLAGS
 // 5993 ;*                           Z:  NO ERRORS
-// 5994 ;*                          NZ:  ERRORS OCCURED
+// 5994 ;*                          NZ:  ERRORS OCCURRED
 // 5995 ;*                                    A -  ERROR  CODE
 // 5996 ;*
 // 5997 ;*       ALL REGISTERS PRESERVED EXCEPT FOR AF
