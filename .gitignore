@@ -1,0 +1,5 @@
+*.ddp
+*.bin
+html/
+latex/
+smartkeys.lib
