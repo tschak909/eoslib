@@ -4,7 +4,7 @@
  * @brief Read value from VDP control register
  */
 
-unsigned char eos_read_vdp_register(unsigned char reg, unsigned char val)
+unsigned char eos_read_vdp_register(void)
 {
   Z80_registers r;
   
