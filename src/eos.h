@@ -286,7 +286,7 @@ void eos_read_vram(unsigned short num, unsigned short addr, unsigned short buf);
 unsigned short eos_put_vram(unsigned char table, unsigned short first, void* buf, unsigned short len);
 unsigned short eos_get_vram(unsigned char table, unsigned short first, void* buf, unsigned short len);
 void eos_write_vdp_register(unsigned char reg, unsigned char val);
-unsigned char eos_read_vdp_register(unsigned char reg, unsigned char val);
+unsigned char eos_read_vdp_register(void);
 void eos_fill_vram(unsigned short val, unsigned short count, unsigned short addr);
 unsigned short eos_calculate_pattern_position(unsigned char y, unsigned char x);
 unsigned char eos_point_to_pattern_position(unsigned short offset);
