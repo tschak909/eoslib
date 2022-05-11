@@ -1,5 +1,6 @@
 *.ddp
 *.bin
+build/
 html/
 latex/
-smartkeys.lib
+eos.lib
